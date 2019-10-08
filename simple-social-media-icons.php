@@ -769,61 +769,73 @@ class Simple_Social_Media_Icons_Plugin {
         if ( ! $facebook_link == '' && isset( $this->options['include_facebook_icon'] ) ) {
             $output .= '<a href="' . esc_url( $facebook_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-facebook fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Facebook</span>' .
             '</a>';
         }
         if ( ! $twitter_link == '' && isset( $this->options['include_twitter_icon'] ) ) {
             $output .= '<a href="' . esc_url( $twitter_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-twitter fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Twitter</span>' .
             '</a>';
         }
         if ( ! $pinterest_link == '' && isset( $this->options['include_pinterest_icon'] ) ) {
             $output .= '<a href="' . esc_url( $pinterest_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-pinterest fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Pinterest</span>' .
             '</a>';
         }
         if ( ! $instagram_link == '' && isset( $this->options['include_instagram_icon'] ) ) {
             $output .= '<a href="' . esc_url( $instagram_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-instagram fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Instagram</span>' .
             '</a>';
         }
         if ( ! $google_plus_link == '' && isset( $this->options['include_google_plus_icon'] ) ) {
             $output .= '<a href="' . esc_url( $google_plus_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-google-plus fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Google Plus</span>' .
             '</a>';
         }
         if ( ! $youtube_link == '' && isset( $this->options['include_youtube_icon'] ) ) {
             $output .= '<a href="' . esc_url( $youtube_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-youtube fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Youtube</span>' .
             '</a>';
         }
         if ( ! $linkedin_link == '' && isset( $this->options['include_linkedin_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $linkedin_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-linkedin fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">LinkedIn</span>' .
             '</a>';
         }
         if ( ! $flickr_link == '' && isset( $this->options['include_flickr_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $flickr_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-flickr fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Flickr</span>' .
             '</a>';
         }
         if ( ! $github_link == '' && isset( $this->options['include_github_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $linkedin_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-github fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">GitHub</span>' .
             '</a>';
         }
         if ( ! $codepen_link == '' && isset( $this->options['include_codepen_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $codepen_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-codepen fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">CodePen</span>' .
             '</a>';
         }
         if ( ! $wordpress_link == '' && isset( $this->options['include_wordpress_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $wordpress_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-wordpress fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">WordPress</span>' .
             '</a>';
         }
         if ( ! $medium_link == '' && isset( $this->options['include_medium_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $medium_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-medium fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Medium</span>' .
             '</a>';
         }
 
@@ -1278,5 +1290,3 @@ class Simple_Social_Media_Icons extends WP_Widget {
         echo $args['after_widget'];
     }
 }
-
-
