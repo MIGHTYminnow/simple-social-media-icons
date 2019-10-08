@@ -10,7 +10,7 @@
  * Plugin Name: Simple Social Media Icons
  * Plugin URI: http://braadmartin.com
  * Description: Adds a widget and shortcode that displays social media icon links using FontAwesome icons
- * Version: 1.1.0-alpha
+ * Version: 1.1.0
  * Author: Braad Martin
  * Author URI: http://braadmartin.com
  * Text Domain: simple-social-media-icons
