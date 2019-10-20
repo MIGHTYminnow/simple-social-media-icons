@@ -8,11 +8,11 @@
  * @copyright 2015 Braad Martin
  *
  * Plugin Name: Simple Social Media Icons
- * Plugin URI: http://braadmartin.com
+ * Plugin URI: https://github.com/MIGHTYminnow/simple-social-media-icons
  * Description: Adds a widget and shortcode that displays social media icon links using FontAwesome icons
  * Version: 1.1.0
- * Author: Braad Martin
- * Author URI: http://braadmartin.com
+ * Author: MIGHTYminnow & Braad Martin
+ * Author URI: https://mightyminnow.org
  * Text Domain: simple-social-media-icons
  * License: GPL2
  */
