@@ -1023,7 +1023,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 	 */
     public function __construct() {
 
-    	$this->plugin_url = WP_PLUGIN_URL . '/simple-social-media-icons';
+    	$this->plugin_url = plugins_url( '', __FILE__ );
 
         // Options to pass to the widget
         $this->widget_options = array(
