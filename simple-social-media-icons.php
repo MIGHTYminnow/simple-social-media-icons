@@ -81,6 +81,8 @@ class Simple_Social_Media_Icons_Plugin {
         'include_instagram_icon'    => true,
         'include_google_plus_icon'  => false,
         'include_youtube_icon'      => true,
+        'include_vimeo_icon'      => true,
+        'include_soundcloud_icon'      => true,
         'include_linkedin_icon'     => false,
         'include_flickr_icon'       => false,
         'include_github_icon'       => false,
@@ -360,6 +362,28 @@ class Simple_Social_Media_Icons_Plugin {
             )
         );
         add_settings_field(
+            'include_vimeo_icon',
+            __( 'Include Vimeo Icon', 'simple-social-media-icons' ),
+            array( $this, 'checkbox_callback' ),
+            self::SLUG,
+            'ssmi_settings_section_primary',
+            array(
+                'id' => 'include_vimeo_icon',
+                'description' => '',
+            )
+        );
+        add_settings_field(
+            'include_soundcloud_icon',
+            __( 'Include SoundCloud Icon', 'simple-social-media-icons' ),
+            array( $this, 'checkbox_callback' ),
+            self::SLUG,
+            'ssmi_settings_section_primary',
+            array(
+                'id' => 'include_soundcloud_icon',
+                'description' => '',
+            )
+        );
+        add_settings_field(
             'include_linkedin_icon',
             __( 'Include LinkedIn Icon', 'simple-social-media-icons' ),
             array( $this, 'checkbox_callback' ),
@@ -514,6 +538,12 @@ class Simple_Social_Media_Icons_Plugin {
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
@@ -553,6 +583,12 @@ class Simple_Social_Media_Icons_Plugin {
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
@@ -592,6 +628,12 @@ class Simple_Social_Media_Icons_Plugin {
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
@@ -631,6 +673,12 @@ class Simple_Social_Media_Icons_Plugin {
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
+                                </a
+			                    ><a href="" onclick="return false" class="ssmi-icon-link">
+			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
 			                    </a
 			                    ><a href="" onclick="return false" class="ssmi-icon-link">
 			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
@@ -677,7 +725,7 @@ class Simple_Social_Media_Icons_Plugin {
                 	   <p>The widget will show on the front end as a row of icon links in the selected style.</p>
                 	   <h3>Shortcode Usage</h3>
                 	   <p>The shortcode works just like the widget and provides you with the same options:</p>
-                	   <p><strong>[ssmi facebook_link="" twitter_link="" pinterest_link="" instagram_link="" google_plus_link="" youtube_link="" linkedin_link="" flickr_link="" github_link="" codepen_link="" wordpress_link="" medium_link="" icon_style=""]</strong></p>
+                	   <p><strong>[ssmi facebook_link="" twitter_link="" pinterest_link="" instagram_link="" google_plus_link="" youtube_link="" vimeo_link="" soundcloud_link="" linkedin_link="" flickr_link="" github_link="" codepen_link="" wordpress_link="" medium_link="" icon_style=""]</strong></p>
                 	   <p>Simply fill in the link for each icon to make it appear, like so:</p>
                 	   <p><strong>[ssmi facebook_link="https://www.facebook.com/Google" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
                 	   <p>The icon_style option accepts the number of any of the icon styles, from 1 to 4.</p>';
@@ -719,6 +767,8 @@ class Simple_Social_Media_Icons_Plugin {
             'instagram_link'    => '',
             'google_plus_link'  => '',
             'youtube_link'      => '',
+            'vimeo_link'      => '',
+            'soundcloud_link'      => '',
             'linkedin_link'     => '',
             'flickr_link'       => '',
             'github_link'       => '',
@@ -740,6 +790,8 @@ class Simple_Social_Media_Icons_Plugin {
         $instagram_link             = $a['instagram_link'];
         $google_plus_link           = $a['google_plus_link'];
         $youtube_link               = $a['youtube_link'];
+        $vimeo_link                 = $a['vimeo_link'];
+        $soundcloud_link            = $a['soundcloud_link'];
         $linkedin_link              = $a['linkedin_link'];
         $flickr_link                = $a['flickr_link'];
         $github_link                = $a['github_link'];
@@ -793,6 +845,18 @@ class Simple_Social_Media_Icons_Plugin {
             $output .= '<a href="' . esc_url( $youtube_link ) . '" class="ssmi-icon-link" target="_blank">' .
                 '<i class="fa fa-youtube fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Youtube</span>' .
+            '</a>';
+        }
+        if ( ! $vimeo_link == '' && isset( $this->options['include_vimeo_icon'] ) ) {
+            $output .= '<a href="' . esc_url( $vimeo_link ) . '" class="ssmi-icon-link" target="_blank">' .
+                '<i class="fa fa-vimeo fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">Vimeo</span>' .
+            '</a>';
+        }
+        if ( ! $soundcloud_link == '' && isset( $this->options['include_soundcloud_icon'] ) ) {
+            $output .= '<a href="' . esc_url( $soundcloud_link ) . '" class="ssmi-icon-link" target="_blank">' .
+                '<i class="fa fa-soundcloud fa-fw ssmi-icon"></i>' .
+				'<span class="screen-reader-text">SoundCloud</span>' .
             '</a>';
         }
         if ( ! $linkedin_link == '' && isset( $this->options['include_linkedin_icon'] ) ) {
@@ -910,6 +974,28 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'youtube_link',
                 'value' => '',
                 'description' => __( 'URL to your Youtube page', 'simple-social-media-icons' )
+                )
+            );
+        }
+        if ( isset( $this->options['include_vimeo_icon'] ) ) {
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Vimeo Link', 'simple-social-media-icons' ),
+                'param_name' => 'vimeo_link',
+                'value' => '',
+                'description' => __( 'URL to your Vimeo page', 'simple-social-media-icons' )
+                )
+            );
+        }
+        if ( isset( $this->options['include_soundcloud_icon'] ) ) {
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'SoundCloud Link', 'simple-social-media-icons' ),
+                'param_name' => 'soundcloud_link',
+                'value' => '',
+                'description' => __( 'URL to your SoundCloud page', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1057,7 +1143,9 @@ class Simple_Social_Media_Icons extends WP_Widget {
         						'pinterest_link' 	=> '',
         						'instagram_link' 	=> '',
         						'google_plus_link' 	=> '',
-        						'youtube_link' 		=> '',
+                                'youtube_link' 		=> '',
+                                'vimeo_link' 		=> '',
+                                'soundcloud_link' 	=> '',
         						'linkedin_link' 	=> '',
                                 'flickr_link'       => '',
                                 'github_link'       => '',
@@ -1074,6 +1162,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
         $instagram_link 	= $instance['instagram_link'];
         $google_plus_link 	= $instance['google_plus_link'];
         $youtube_link       = $instance['youtube_link'];
+        $vimeo_link         = $instance['vimeo_link'];
+        $soundcloud_link    = $instance['soundcloud_link'];
         $linkedin_link      = $instance['linkedin_link'];
         $flickr_link        = $instance['flickr_link'];
         $github_link        = $instance['github_link'];
@@ -1129,6 +1219,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_youtube_link"><?php _e( 'Youtube Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_youtube_link" name="<?php echo $this->get_field_name( 'youtube_link' ); ?>" value="<?php echo esc_url( $youtube_link ); ?>" />
         </p>
+        <?php }
+        if ( isset( $this->plugin_options['include_vimeo_icon'] ) ) {
+            ?>
+            <p>
+                <label for="simple_social_media_icons_vimeo_link"><?php _e( 'Vimeo Link', 'simple-social-media-icons' ); ?>:</label>
+                <input type="text" class="widefat" id="simple_social_media_icons_vimeo_link" name="<?php echo $this->get_field_name( 'vimeo_link' ); ?>" value="<?php echo esc_url( $vimeo_link ); ?>" />
+            </p>
+        <?php }
+        if ( isset( $this->plugin_options['include_soundcloud_icon'] ) ) {
+            ?>
+            <p>
+                <label for="simple_social_media_icons_soundcloud_link"><?php _e( 'SoundCloud Link', 'simple-social-media-icons' ); ?>:</label>
+                <input type="text" class="widefat" id="simple_social_media_icons_soundcloud_link" name="<?php echo $this->get_field_name( 'soundcloud_link' ); ?>" value="<?php echo esc_url( $soundcloud_link ); ?>" />
+            </p>
         <?php }
         if ( isset( $this->plugin_options['include_linkedin_icon'] ) ) {
         ?>
@@ -1205,6 +1309,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
         $instance['instagram_link'] 	= sanitize_text_field( $new_instance['instagram_link'] );
         $instance['google_plus_link']   = sanitize_text_field( $new_instance['google_plus_link'] );
         $instance['youtube_link']       = sanitize_text_field( $new_instance['youtube_link'] );
+        $instance['vimeo_link']         = sanitize_text_field( $new_instance['vimeo_link'] );
+        $instance['soundcloud_link']    = sanitize_text_field( $new_instance['soundcloud_link'] );
         $instance['linkedin_link']      = sanitize_text_field( $new_instance['linkedin_link'] );
         $instance['flickr_link']        = sanitize_text_field( $new_instance['flickr_link'] );
         $instance['github_link']        = sanitize_text_field( $new_instance['github_link'] );
@@ -1236,7 +1342,9 @@ class Simple_Social_Media_Icons extends WP_Widget {
         		'twitter_link' 		=> '',
         		'pinterest_link' 	=> '',
         		'google_plus_link' 	=> '',
-        		'youtube_link' 		=> '',
+                'youtube_link' 		=> '',
+                'vimeo_link' 		=> '',
+                'soundcloud_link' 	=> '',
         		'linkedin_link' 	=> '',
                 'flickr_link'       => '',
                 'github_link'       => '',
@@ -1256,6 +1364,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
         $instagram_link 	= ( isset( $instance['instagram_link'] ) ) ? $instance['instagram_link'] : '';
         $google_plus_link   = ( isset( $instance['google_plus_link'] ) ) ? $instance['google_plus_link'] : '';
         $youtube_link       = ( isset( $instance['youtube_link'] ) ) ? $instance['youtube_link'] : '';
+        $vimeo_link         = ( isset( $instance['vimeo_link'] ) ) ? $instance['vimeo_link'] : '';
+        $soundcloud_link    = ( isset( $instance['soundcloud_link'] ) ) ? $instance['soundcloud_link'] : '';
         $linkedin_link      = ( isset( $instance['linkedin_link'] ) ) ? $instance['linkedin_link'] : '';
         $flickr_link        = ( isset( $instance['flickr_link'] ) ) ? $instance['flickr_link'] : '';
         $github_link        = ( isset( $instance['github_link'] ) ) ? $instance['github_link'] : '';
@@ -1267,7 +1377,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         $shortcode 			= '[ssmi facebook_link="'
                               . $facebook_link . '" twitter_link="' . $twitter_link . '" pinterest_link="'
                               . $pinterest_link . '" instagram_link="' . $instagram_link . '" google_plus_link="'
-                              . $google_plus_link . '" youtube_link="' . $youtube_link . '" linkedin_link="'
+                              . $google_plus_link . '" youtube_link="' . $youtube_link . '" vimeo_link="' . $vimeo_link . '" soundcloud_link="' . $soundcloud_link . '" linkedin_link="'
                               . $linkedin_link . '" flickr_link="' . $flickr_link . '" github_link="'
                               . $github_link . '" codepen_link="' . $codepen_link . '" wordpress_link="'
                               . $wordpress_link . '" medium_link="' . $medium_link . '" icon_style="'

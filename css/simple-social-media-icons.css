@@ -12,6 +12,8 @@
  * Instagram: 	#517fa4;
  * Google Plus: #dd4b39;
  * Youtube: 	#bb0000;
+ * Vimeo:   	#00AFF5;
+ * SoundCloud: 	#FF4200;
  * LinkedIn: 	#007bb6;
  */
 
@@ -91,6 +93,14 @@ a.ssmi-icon-link:hover i.fa {
 	color: #bb0000;
 }
 
+.icon-style-1 i.fa-vimeo {
+	color: #00AFF5;
+}
+
+.icon-style-1 i.fa-soundcloud {
+	color: #FF4200;
+}
+
 .icon-style-1 i.fa-linkedin {
 	color: #007bb6;
 }
@@ -155,6 +165,20 @@ a.ssmi-icon-link:hover i.fa {
 .icon-style-4 i.fa-youtube {
 	color: white;
 	background-color: #bb0000;
+}
+
+.icon-style-2 i.fa-vimeo,
+.icon-style-3 i.fa-vimeo,
+.icon-style-4 i.fa-vimeo {
+	color: white;
+	background-color: #00AFF5;
+}
+
+.icon-style-2 i.fa-soundcloud,
+.icon-style-3 i.fa-soundcloud,
+.icon-style-4 i.fa-soundcloud {
+	color: white;
+	background-color: #FF4200;
 }
 
 .icon-style-2 i.fa-linkedin,
