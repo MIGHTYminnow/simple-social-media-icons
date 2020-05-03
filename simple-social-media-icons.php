@@ -3,7 +3,7 @@
  * Plugin Name: Simple Social Media Icons
  * Plugin URI: https://github.com/MIGHTYminnow/simple-social-media-icons
  * Description: Adds a widget and shortcode that displays social media icon links using FontAwesome icons.
- * Version: 1.2.0
+ * Version: 1.2.1
  * Author: MIGHTYminnow & Braad Martin
  * Author URI: https://mightyminnow.org
  * Text Domain: simple-social-media-icons
