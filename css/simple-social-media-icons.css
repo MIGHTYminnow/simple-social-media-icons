@@ -10,6 +10,7 @@
  * Twitter: 	#00aced;
  * Pinterest:	#cb2027;
  * Instagram: 	#517fa4;
+ * Google Plus: #dd4b39;
  * Youtube: 	#bb0000;
  * Vimeo:   	#00AFF5;
  * SoundCloud: 	#FF4200;
@@ -84,6 +85,10 @@ a.ssmi-icon-link:hover i.fa {
 	color: #517fa4;
 }
 
+.icon-style-1 i.fa-google-plus {
+	color: #dd4b39;
+}
+
 .icon-style-1 i.fa-youtube {
 	color: #bb0000;
 }
@@ -146,6 +151,13 @@ a.ssmi-icon-link:hover i.fa {
 .icon-style-4 i.fa-instagram {
 	color: white;
 	background-color: #517fa4;
+}
+
+.icon-style-2 i.fa-google-plus,
+.icon-style-3 i.fa-google-plus,
+.icon-style-4 i.fa-google-plus {
+	color: white;
+	background-color: #dd4b39;
 }
 
 .icon-style-2 i.fa-youtube,
