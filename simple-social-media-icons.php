@@ -974,6 +974,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your Twitter page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Twitter Color', 'simple-social-media-icons' ),
+                'param_name' => 'twitter_color',
+                'value' => '',
+                'description' => __( 'Color of the Twitter icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_pinterest_icon'] ) ) {
             array_push( $vc_params, array(
@@ -983,6 +992,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'pinterest_link',
                 'value' => '',
                 'description' => __( 'URL to your Pinterest page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Pinterest Color', 'simple-social-media-icons' ),
+                'param_name' => 'pinterest_color',
+                'value' => '',
+                'description' => __( 'Color of the Pinterest icon', 'simple-social-media-icons' )
                 )
             );
         }
@@ -996,6 +1014,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your Instagram page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Instagram Color', 'simple-social-media-icons' ),
+                'param_name' => 'instagram_color',
+                'value' => '',
+                'description' => __( 'Color of the Instagram icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_google_plus_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1005,6 +1032,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'google_plus_link',
                 'value' => '',
                 'description' => __( 'URL to your Google Plus page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Google Plus Color', 'simple-social-media-icons' ),
+                'param_name' => 'google_plus_color',
+                'value' => '',
+                'description' => __( 'Color of the Google Plus icon', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1018,6 +1054,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your Youtube page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Youtube Color', 'simple-social-media-icons' ),
+                'param_name' => 'youtube_color',
+                'value' => '',
+                'description' => __( 'Color of the Youtube icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_vimeo_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1027,6 +1072,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'vimeo_link',
                 'value' => '',
                 'description' => __( 'URL to your Vimeo page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Vimeo Color', 'simple-social-media-icons' ),
+                'param_name' => 'vimeo_color',
+                'value' => '',
+                'description' => __( 'Color of the Vimeo icon', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1040,6 +1094,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your SoundCloud page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'SoundCloud Color', 'simple-social-media-icons' ),
+                'param_name' => 'soundcloud_color',
+                'value' => '',
+                'description' => __( 'Color of the SoundCloud icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_linkedin_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1049,6 +1112,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'linkedin_link',
                 'value' => '',
                 'description' => __( 'URL to your LinkedIn page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'LinkedIn Color', 'simple-social-media-icons' ),
+                'param_name' => 'linkedin_color',
+                'value' => '',
+                'description' => __( 'Color of the LinkedIn icon', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1062,6 +1134,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your Flickr page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Flickr Color', 'simple-social-media-icons' ),
+                'param_name' => 'flickr_color',
+                'value' => '',
+                'description' => __( 'Color of the Flickr icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_github_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1071,6 +1152,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'github_link',
                 'value' => '',
                 'description' => __( 'URL to your Github page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Github Color', 'simple-social-media-icons' ),
+                'param_name' => 'github_color',
+                'value' => '',
+                'description' => __( 'Color of the Github icon', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1084,6 +1174,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your Codepen page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Codepen Color', 'simple-social-media-icons' ),
+                'param_name' => 'codepen_color',
+                'value' => '',
+                'description' => __( 'Color of the Codepen icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_wordpress_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1095,6 +1194,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'description' => __( 'URL to your WordPress page', 'simple-social-media-icons' )
                 )
             );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'WordPress Color', 'simple-social-media-icons' ),
+                'param_name' => 'wordpress_color',
+                'value' => '',
+                'description' => __( 'Color of the WordPress icon', 'simple-social-media-icons' )
+                )
+            );
         }
         if ( isset( $this->options['include_medium_icon'] ) ) {
             array_push( $vc_params, array(
@@ -1104,6 +1212,15 @@ class Simple_Social_Media_Icons_Plugin {
                 'param_name' => 'medium_link',
                 'value' => '',
                 'description' => __( 'URL to your Medium page', 'simple-social-media-icons' )
+                )
+            );
+            array_push( $vc_params, array(
+                'type' => 'textfield',
+                'class' => '',
+                'heading' => __( 'Medium Color', 'simple-social-media-icons' ),
+                'param_name' => 'medium_color',
+                'value' => '',
+                'description' => __( 'Color of the Medium icon', 'simple-social-media-icons' )
                 )
             );
         }
