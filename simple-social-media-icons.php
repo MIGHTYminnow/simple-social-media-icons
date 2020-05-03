@@ -1368,12 +1368,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_twitter_link"><?php _e( 'Twitter Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_twitter_link" name="<?php echo $this->get_field_name( 'twitter_link' ); ?>" value="<?php echo esc_url( $twitter_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_twitter_color"><?php _e( 'Twitter Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_twitter_color" name="<?php echo $this->get_field_name( 'twitter_color' ); ?>" value="<?php echo esc_attr( $instance['twitter_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_pinterest_icon'] ) ) {
         ?>
         <p>
             <label for="simple_social_media_icons_pinterest_link"><?php _e( 'Pinterest Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_pinterest_link" name="<?php echo $this->get_field_name( 'pinterest_link' ); ?>" value="<?php echo esc_url( $pinterest_link ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_pinterest_color"><?php _e( 'Pinterest Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_pinterest_color" name="<?php echo $this->get_field_name( 'pinterest_color' ); ?>" value="<?php echo esc_attr( $instance['pinterest_color'] ); ?>" />
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_instagram_icon'] ) ) {
@@ -1382,12 +1390,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_instagram_link"><?php _e( 'Instagram Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_instagram_link" name="<?php echo $this->get_field_name( 'instagram_link' ); ?>" value="<?php echo esc_url( $instagram_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_instagram_color"><?php _e( 'Instagram Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_instagram_color" name="<?php echo $this->get_field_name( 'instagram_color' ); ?>" value="<?php echo esc_attr( $instance['instagram_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_google_plus_icon'] ) ) {
         ?>
         <p>
             <label for="simple_social_media_icons_google_plus_link"><?php _e( 'Google Plus Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_google_plus_link" name="<?php echo $this->get_field_name( 'google_plus_link' ); ?>" value="<?php echo esc_url( $google_plus_link ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_google_plus_color"><?php _e( 'Google Plus Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_google_plus_color" name="<?php echo $this->get_field_name( 'google_plus_color' ); ?>" value="<?php echo esc_attr( $instance['google_plus_color'] ); ?>" />
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_youtube_icon'] ) ) {
@@ -1396,12 +1412,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_youtube_link"><?php _e( 'Youtube Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_youtube_link" name="<?php echo $this->get_field_name( 'youtube_link' ); ?>" value="<?php echo esc_url( $youtube_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_youtube_color"><?php _e( 'Youtube Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_youtube_color" name="<?php echo $this->get_field_name( 'youtube_color' ); ?>" value="<?php echo esc_attr( $instance['youtube_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_vimeo_icon'] ) ) {
             ?>
             <p>
                 <label for="simple_social_media_icons_vimeo_link"><?php _e( 'Vimeo Link', 'simple-social-media-icons' ); ?>:</label>
                 <input type="text" class="widefat" id="simple_social_media_icons_vimeo_link" name="<?php echo $this->get_field_name( 'vimeo_link' ); ?>" value="<?php echo esc_url( $vimeo_link ); ?>" />
+            </p>
+            <p>
+                <label for="simple_social_media_icons_vimeo_color"><?php _e( 'Vimeo Color', 'simple-social-media-icons' ); ?>:</label>
+                <input type="text" class="widefat" id="simple_social_media_icons_vimeo_color" name="<?php echo $this->get_field_name( 'vimeo_color' ); ?>" value="<?php echo esc_attr( $instance['vimeo_color'] ); ?>" />
             </p>
         <?php }
         if ( isset( $this->plugin_options['include_soundcloud_icon'] ) ) {
@@ -1410,12 +1434,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
                 <label for="simple_social_media_icons_soundcloud_link"><?php _e( 'SoundCloud Link', 'simple-social-media-icons' ); ?>:</label>
                 <input type="text" class="widefat" id="simple_social_media_icons_soundcloud_link" name="<?php echo $this->get_field_name( 'soundcloud_link' ); ?>" value="<?php echo esc_url( $soundcloud_link ); ?>" />
             </p>
+            <p>
+                <label for="simple_social_media_icons_soundcloud_color"><?php _e( 'SoundCloud Color', 'simple-social-media-icons' ); ?>:</label>
+                <input type="text" class="widefat" id="simple_social_media_icons_soundcloud_color" name="<?php echo $this->get_field_name( 'soundcloud_color' ); ?>" value="<?php echo esc_attr( $instance['soundcloud_color'] ); ?>" />
+            </p>
         <?php }
         if ( isset( $this->plugin_options['include_linkedin_icon'] ) ) {
         ?>
         <p>
             <label for="simple_social_media_icons_linkedin_link"><?php _e( 'LinkedIn Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_linkedin_link" name="<?php echo $this->get_field_name( 'linkedin_link' ); ?>" value="<?php echo esc_url( $linkedin_link ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_linkedin_color"><?php _e( 'LinkedIn Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_linkedin_color" name="<?php echo $this->get_field_name( 'linkedin_color' ); ?>" value="<?php echo esc_attr( $instance['linkedin_color'] ); ?>" />
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_flickr_icon'] ) ) {
@@ -1424,12 +1456,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_flickr_link"><?php _e( 'Flickr Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_flickr_link" name="<?php echo $this->get_field_name( 'flickr_link' ); ?>" value="<?php echo esc_url( $flickr_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_flickr_color"><?php _e( 'Flickr Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_flickr_color" name="<?php echo $this->get_field_name( 'flickr_color' ); ?>" value="<?php echo esc_attr( $instance['flickr_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_github_icon'] ) ) {
         ?>
         <p>
             <label for="simple_social_media_icons_github_link"><?php _e( 'Github Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_github_link" name="<?php echo $this->get_field_name( 'github_link' ); ?>" value="<?php echo esc_url( $github_link ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_github_color"><?php _e( 'Github Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_github_color" name="<?php echo $this->get_field_name( 'github_color' ); ?>" value="<?php echo esc_attr( $instance['github_color'] ); ?>" />
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_codepen_icon'] ) ) {
@@ -1438,6 +1478,10 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_codepen_link"><?php _e( 'Codepen Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_codepen_link" name="<?php echo $this->get_field_name( 'codepen_link' ); ?>" value="<?php echo esc_url( $codepen_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_codepen_color"><?php _e( 'Codepen Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_codepen_color" name="<?php echo $this->get_field_name( 'codepen_color' ); ?>" value="<?php echo esc_attr( $instance['codepen_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_wordpress_icon'] ) ) {
         ?>
@@ -1445,12 +1489,20 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <label for="simple_social_media_icons_wordpress_link"><?php _e( 'WordPress Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_wordpress_link" name="<?php echo $this->get_field_name( 'wordpress_link' ); ?>" value="<?php echo esc_url( $wordpress_link ); ?>" />
         </p>
+        <p>
+            <label for="simple_social_media_icons_wordpress_color"><?php _e( 'WordPress Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_wordpress_color" name="<?php echo $this->get_field_name( 'wordpress_color' ); ?>" value="<?php echo esc_attr( $instance['wordpress_color'] ); ?>" />
+        </p>
         <?php }
         if ( isset( $this->plugin_options['include_medium_icon'] ) ) {
         ?>
         <p>
             <label for="simple_social_media_icons_medium_link"><?php _e( 'Medium Link', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_medium_link" name="<?php echo $this->get_field_name( 'medium_link' ); ?>" value="<?php echo esc_url( $medium_link ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_medium_color"><?php _e( 'Medium Color', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_medium_color" name="<?php echo $this->get_field_name( 'medium_color' ); ?>" value="<?php echo esc_attr( $instance['medium_color'] ); ?>" />
         </p>
         <?php } ?>
         <p>
