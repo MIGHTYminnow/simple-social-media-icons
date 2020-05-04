@@ -974,7 +974,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Facebook Color', 'simple-social-media-icons' ),
                 'param_name' => 'facebook_color',
                 'value' => '',
-                'description' => __( 'Color of the Facebook icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #3b5998', 'simple-social-media-icons' )
                 )
             );
         }
@@ -994,7 +994,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Twitter Color', 'simple-social-media-icons' ),
                 'param_name' => 'twitter_color',
                 'value' => '',
-                'description' => __( 'Color of the Twitter icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #00aced', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1014,7 +1014,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Pinterest Color', 'simple-social-media-icons' ),
                 'param_name' => 'pinterest_color',
                 'value' => '',
-                'description' => __( 'Color of the Pinterest icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #cb2027', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1034,7 +1034,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Instagram Color', 'simple-social-media-icons' ),
                 'param_name' => 'instagram_color',
                 'value' => '',
-                'description' => __( 'Color of the Instagram icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #517fa4', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1054,7 +1054,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Google Plus Color', 'simple-social-media-icons' ),
                 'param_name' => 'google_plus_color',
                 'value' => '',
-                'description' => __( 'Color of the Google Plus icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #dd4b39', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1074,7 +1074,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Youtube Color', 'simple-social-media-icons' ),
                 'param_name' => 'youtube_color',
                 'value' => '',
-                'description' => __( 'Color of the Youtube icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #bb0000', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1094,7 +1094,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Vimeo Color', 'simple-social-media-icons' ),
                 'param_name' => 'vimeo_color',
                 'value' => '',
-                'description' => __( 'Color of the Vimeo icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #00AFF5', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1114,7 +1114,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'SoundCloud Color', 'simple-social-media-icons' ),
                 'param_name' => 'soundcloud_color',
                 'value' => '',
-                'description' => __( 'Color of the SoundCloud icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #FF4200', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1134,7 +1134,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'LinkedIn Color', 'simple-social-media-icons' ),
                 'param_name' => 'linkedin_color',
                 'value' => '',
-                'description' => __( 'Color of the LinkedIn icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #007bb6', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1154,7 +1154,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Flickr Color', 'simple-social-media-icons' ),
                 'param_name' => 'flickr_color',
                 'value' => '',
-                'description' => __( 'Color of the Flickr icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #ff0084', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1174,7 +1174,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Github Color', 'simple-social-media-icons' ),
                 'param_name' => 'github_color',
                 'value' => '',
-                'description' => __( 'Color of the Github icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #222', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1194,7 +1194,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Codepen Color', 'simple-social-media-icons' ),
                 'param_name' => 'codepen_color',
                 'value' => '',
-                'description' => __( 'Color of the Codepen icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #113472', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1214,7 +1214,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'WordPress Color', 'simple-social-media-icons' ),
                 'param_name' => 'wordpress_color',
                 'value' => '',
-                'description' => __( 'Color of the WordPress icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #464646', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1234,7 +1234,7 @@ class Simple_Social_Media_Icons_Plugin {
                 'heading' => __( 'Medium Color', 'simple-social-media-icons' ),
                 'param_name' => 'medium_color',
                 'value' => '',
-                'description' => __( 'Color of the Medium icon', 'simple-social-media-icons' )
+                'description' => __( 'Default is #000', 'simple-social-media-icons' )
                 )
             );
         }
@@ -1380,6 +1380,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_facebook_color"><?php _e( 'Facebook Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_facebook_color" name="<?php echo $this->get_field_name( 'facebook_color' ); ?>" value="<?php echo esc_attr( $instance['facebook_color'] ); ?>" />
+            <i>Default is #3b5998</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_twitter_icon'] ) ) {
@@ -1391,6 +1392,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_twitter_color"><?php _e( 'Twitter Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_twitter_color" name="<?php echo $this->get_field_name( 'twitter_color' ); ?>" value="<?php echo esc_attr( $instance['twitter_color'] ); ?>" />
+            <i>Default is #00aced</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_pinterest_icon'] ) ) {
@@ -1402,6 +1404,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_pinterest_color"><?php _e( 'Pinterest Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_pinterest_color" name="<?php echo $this->get_field_name( 'pinterest_color' ); ?>" value="<?php echo esc_attr( $instance['pinterest_color'] ); ?>" />
+            <i>Default is #cb2027</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_instagram_icon'] ) ) {
@@ -1413,6 +1416,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_instagram_color"><?php _e( 'Instagram Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_instagram_color" name="<?php echo $this->get_field_name( 'instagram_color' ); ?>" value="<?php echo esc_attr( $instance['instagram_color'] ); ?>" />
+            <i>Default is #517fa4</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_google_plus_icon'] ) ) {
@@ -1424,6 +1428,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_google_plus_color"><?php _e( 'Google Plus Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_google_plus_color" name="<?php echo $this->get_field_name( 'google_plus_color' ); ?>" value="<?php echo esc_attr( $instance['google_plus_color'] ); ?>" />
+            <i>Default is #dd4b39</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_youtube_icon'] ) ) {
@@ -1435,6 +1440,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_youtube_color"><?php _e( 'Youtube Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_youtube_color" name="<?php echo $this->get_field_name( 'youtube_color' ); ?>" value="<?php echo esc_attr( $instance['youtube_color'] ); ?>" />
+            <i>Default is #bb0000</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_vimeo_icon'] ) ) {
@@ -1446,6 +1452,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <p>
                 <label for="simple_social_media_icons_vimeo_color"><?php _e( 'Vimeo Color', 'simple-social-media-icons' ); ?>:</label>
                 <input type="text" class="widefat" id="simple_social_media_icons_vimeo_color" name="<?php echo $this->get_field_name( 'vimeo_color' ); ?>" value="<?php echo esc_attr( $instance['vimeo_color'] ); ?>" />
+                <i>Default is #00AFF5</i>
             </p>
         <?php }
         if ( isset( $this->plugin_options['include_soundcloud_icon'] ) ) {
@@ -1457,6 +1464,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <p>
                 <label for="simple_social_media_icons_soundcloud_color"><?php _e( 'SoundCloud Color', 'simple-social-media-icons' ); ?>:</label>
                 <input type="text" class="widefat" id="simple_social_media_icons_soundcloud_color" name="<?php echo $this->get_field_name( 'soundcloud_color' ); ?>" value="<?php echo esc_attr( $instance['soundcloud_color'] ); ?>" />
+                <i>Default is #FF4200</i>
             </p>
         <?php }
         if ( isset( $this->plugin_options['include_linkedin_icon'] ) ) {
@@ -1468,6 +1476,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_linkedin_color"><?php _e( 'LinkedIn Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_linkedin_color" name="<?php echo $this->get_field_name( 'linkedin_color' ); ?>" value="<?php echo esc_attr( $instance['linkedin_color'] ); ?>" />
+            <i>Default is #007bb6</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_flickr_icon'] ) ) {
@@ -1479,6 +1488,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_flickr_color"><?php _e( 'Flickr Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_flickr_color" name="<?php echo $this->get_field_name( 'flickr_color' ); ?>" value="<?php echo esc_attr( $instance['flickr_color'] ); ?>" />
+            <i>Default is #ff0084</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_github_icon'] ) ) {
@@ -1490,6 +1500,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_github_color"><?php _e( 'Github Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_github_color" name="<?php echo $this->get_field_name( 'github_color' ); ?>" value="<?php echo esc_attr( $instance['github_color'] ); ?>" />
+            <i>Default is #222</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_codepen_icon'] ) ) {
@@ -1501,6 +1512,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_codepen_color"><?php _e( 'Codepen Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_codepen_color" name="<?php echo $this->get_field_name( 'codepen_color' ); ?>" value="<?php echo esc_attr( $instance['codepen_color'] ); ?>" />
+            <i>Default is #113472</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_wordpress_icon'] ) ) {
@@ -1512,6 +1524,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_wordpress_color"><?php _e( 'WordPress Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_wordpress_color" name="<?php echo $this->get_field_name( 'wordpress_color' ); ?>" value="<?php echo esc_attr( $instance['wordpress_color'] ); ?>" />
+            <i>Default is #464646</i>
         </p>
         <?php }
         if ( isset( $this->plugin_options['include_medium_icon'] ) ) {
@@ -1523,6 +1536,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_medium_color"><?php _e( 'Medium Color', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_medium_color" name="<?php echo $this->get_field_name( 'medium_color' ); ?>" value="<?php echo esc_attr( $instance['medium_color'] ); ?>" />
+            <i>Default is #000</i>
         </p>
         <?php } ?>
         <p>
