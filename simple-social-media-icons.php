@@ -725,9 +725,9 @@ class Simple_Social_Media_Icons_Plugin {
                 	   <p>The widget will show on the front end as a row of icon links in the selected style.</p>
                 	   <h3>Shortcode Usage</h3>
                 	   <p>The shortcode works just like the widget and provides you with the same options:</p>
-                	   <p><strong>[ssmi facebook_link="" facebook_color="" twitter_link="" twitter_color="" pinterest_link="" pinterest_color="" instagram_link="" instagram_color="" google_plus_link="" google_plus_color="" youtube_link="" youtube_color="" vimeo_link="" vimeo_color="" soundcloud_link="" soundcloud_color="" linkedin_link="" linkedin_color="" flickr_link="" flickr_color="" github_link="" github_color="" codepen_link="" codepen_color="" wordpress_link="" wordpress_color="" medium_link="" medium_color="" icon_style=""]</strong></p>
+                	   <p><strong>[ssmi all_color="" facebook_link="" facebook_color="" twitter_link="" twitter_color="" pinterest_link="" pinterest_color="" instagram_link="" instagram_color="" google_plus_link="" google_plus_color="" youtube_link="" youtube_color="" vimeo_link="" vimeo_color="" soundcloud_link="" soundcloud_color="" linkedin_link="" linkedin_color="" flickr_link="" flickr_color="" github_link="" github_color="" codepen_link="" codepen_color="" wordpress_link="" wordpress_color="" medium_link="" medium_color="" icon_style=""]</strong></p>
                 	   <p>Simply fill in the link for each icon to make it appear, like so:</p>
-                	   <p><strong>[ssmi facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
+                	   <p><strong>[ssmi all_color=" facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
                 	   <p>The icon_style option accepts the number of any of the icon styles, from 1 to 4.</p>';
 
         return '<div class="ssmi-usage-text">' . __( $usage_text, 'simple-social-media-icons' ) . '</div>';
@@ -755,13 +755,16 @@ class Simple_Social_Media_Icons_Plugin {
      * @since   1.2.0
      *
      * @param   string  $style  The icon style.
-     * @param  string  $color  The custom color for the icon.
+     * @param  string  $all_color  The custom color for all the icons.
+     * @param  string  $this_color  The custom color for this icon.
      * @return  string  $style  The style attributo for <i>.
      */
-    public function icon_custom_color( $style, $color ) {
-        if ( ! $color ) {
+    public function icon_custom_color( $style, $all_color, $this_color ) {
+        if ( ! $all_color && ! $this_color ) {
             return '';
         }
+
+        $color = ( $this_color ) ? $this_color : $all_color;
 
         return ( 1 == $style )
             ? ' style="color:' . $color . '" '
@@ -780,6 +783,7 @@ class Simple_Social_Media_Icons_Plugin {
      */
     public function ssmi_shortcode( $atts ) {
         $a = shortcode_atts( array(
+            'all_color'     => '',
             'facebook_link'     => '',
             'facebook_color'    => '',
             'twitter_link'      => '',
@@ -846,85 +850,85 @@ class Simple_Social_Media_Icons_Plugin {
 
         if ( ! $facebook_link == '' && isset( $this->options['include_facebook_icon'] ) ) {
             $output .= '<a href="' . esc_url( $facebook_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['facebook_color'] ) . ' class="fa fa-facebook fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['facebook_color'] ) . ' class="fa fa-facebook fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Facebook</span>' .
             '</a>';
         }
         if ( ! $twitter_link == '' && isset( $this->options['include_twitter_icon'] ) ) {
             $output .= '<a href="' . esc_url( $twitter_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['twitter_color'] ) . ' class="fa fa-twitter fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['twitter_color'] ) . ' class="fa fa-twitter fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Twitter</span>' .
             '</a>';
         }
         if ( ! $pinterest_link == '' && isset( $this->options['include_pinterest_icon'] ) ) {
             $output .= '<a href="' . esc_url( $pinterest_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['pinterest_color'] ) . ' class="fa fa-pinterest fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['pinterest_color'] ) . ' class="fa fa-pinterest fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Pinterest</span>' .
             '</a>';
         }
         if ( ! $instagram_link == '' && isset( $this->options['include_instagram_icon'] ) ) {
             $output .= '<a href="' . esc_url( $instagram_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['instagram_color'] ) . ' class="fa fa-instagram fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['instagram_color'] ) . ' class="fa fa-instagram fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Instagram</span>' .
             '</a>';
         }
         if ( ! $google_plus_link == '' && isset( $this->options['include_google_plus_icon'] ) ) {
             $output .= '<a href="' . esc_url( $google_plus_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['google_plus_color'] ) . ' class="fa fa-google-plus fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['google_plus_color'] ) . ' class="fa fa-google-plus fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Google Plus</span>' .
             '</a>';
         }
         if ( ! $youtube_link == '' && isset( $this->options['include_youtube_icon'] ) ) {
             $output .= '<a href="' . esc_url( $youtube_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['youtube_color'] ) . ' class="fa fa-youtube fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['youtube_color'] ) . ' class="fa fa-youtube fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Youtube</span>' .
             '</a>';
         }
         if ( ! $vimeo_link == '' && isset( $this->options['include_vimeo_icon'] ) ) {
             $output .= '<a href="' . esc_url( $vimeo_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['vimeo_color'] ) . ' class="fa fa-vimeo fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['vimeo_color'] ) . ' class="fa fa-vimeo fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Vimeo</span>' .
             '</a>';
         }
         if ( ! $soundcloud_link == '' && isset( $this->options['include_soundcloud_icon'] ) ) {
             $output .= '<a href="' . esc_url( $soundcloud_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['soundcloud_color'] ) . ' class="fa fa-soundcloud fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['soundcloud_color'] ) . ' class="fa fa-soundcloud fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">SoundCloud</span>' .
             '</a>';
         }
         if ( ! $linkedin_link == '' && isset( $this->options['include_linkedin_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $linkedin_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['linkedin_color'] ) . ' class="fa fa-linkedin fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['linkedin_color'] ) . ' class="fa fa-linkedin fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">LinkedIn</span>' .
             '</a>';
         }
         if ( ! $flickr_link == '' && isset( $this->options['include_flickr_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $flickr_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['flickr_color'] ) . ' class="fa fa-flickr fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['flickr_color'] ) . ' class="fa fa-flickr fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Flickr</span>' .
             '</a>';
         }
         if ( ! $github_link == '' && isset( $this->options['include_github_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $linkedin_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['github_color'] ) . ' class="fa fa-github fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['github_color'] ) . ' class="fa fa-github fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">GitHub</span>' .
             '</a>';
         }
         if ( ! $codepen_link == '' && isset( $this->options['include_codepen_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $codepen_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['codepen_color'] ) . ' class="fa fa-codepen fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['codepen_color'] ) . ' class="fa fa-codepen fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">CodePen</span>' .
             '</a>';
         }
         if ( ! $wordpress_link == '' && isset( $this->options['include_wordpress_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $wordpress_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['wordpress_color'] ) . ' class="fa fa-wordpress fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['wordpress_color'] ) . ' class="fa fa-wordpress fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">WordPress</span>' .
             '</a>';
         }
         if ( ! $medium_link == '' && isset( $this->options['include_medium_icon'] ) ) {
             $output .= '<a href="'  . esc_url( $medium_link ) . '" class="ssmi-icon-link" target="_blank">' .
-                '<i ' . $this->icon_custom_color( $icon_style, $a['medium_color'] ) . ' class="fa fa-medium fa-fw ssmi-icon"></i>' .
+                '<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a['medium_color'] ) . ' class="fa fa-medium fa-fw ssmi-icon"></i>' .
 				'<span class="screen-reader-text">Medium</span>' .
             '</a>';
         }
@@ -942,6 +946,16 @@ class Simple_Social_Media_Icons_Plugin {
     public function ssmi_visual_composer() {
 
         $vc_params = array();
+
+        array_push( $vc_params, array(
+            'type' => 'textfield',
+            'class' => '',
+            'heading' => __( 'All Icons Color', 'simple-social-media-icons' ),
+            'param_name' => 'all_color',
+            'value' => '',
+            'description' => __( 'Use this field to make all icons of the same color.', 'simple-social-media-icons' )
+            )
+        );
 
         // Check which icons should be included
         if ( isset( $this->options['include_facebook_icon'] ) ) {
@@ -1296,7 +1310,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
     public function form( $instance ) {
 
         $defaults           = array(
-        						'title' 			=> '',
+                                'title' 			=> '',
+                                'all_color'			=> '',
                                 'facebook_link' 	=> '',
                                 'facebook_color' 	=> '',
                                 'twitter_link' 		=> '',
@@ -1329,6 +1344,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         					);
         $instance           = wp_parse_args( $instance, $defaults );
         $title              = $instance['title'];
+        $all_color          = $instance['all_color'];
         $facebook_link      = $instance['facebook_link'];
         $twitter_link       = $instance['twitter_link'];
         $pinterest_link     = $instance['pinterest_link'];
@@ -1349,6 +1365,10 @@ class Simple_Social_Media_Icons extends WP_Widget {
         <p>
             <label for="simple_social_media_icons_title"><?php _e( 'Title', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_title" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
+        </p>
+        <p>
+            <label for="simple_social_media_icons_all_color"><?php _e( 'Color for all icons', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_all_color" name="<?php echo $this->get_field_name( 'all_color' ); ?>" value="<?php echo esc_attr( $all_color ); ?>" />
         </p>
         <?php
         if ( isset( $this->plugin_options['include_facebook_icon'] ) ) {
@@ -1532,6 +1552,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 
         $instance                       = $old_instance;
         $instance['title']              = sanitize_text_field( $new_instance['title'] );
+        $instance['all_color']          = sanitize_text_field( $new_instance['all_color'] );
         $instance['facebook_link']      = sanitize_text_field( $new_instance['facebook_link'] );
         $instance['facebook_color']     = sanitize_text_field( $new_instance['facebook_color'] );
         $instance['twitter_link']		= sanitize_text_field( $new_instance['twitter_link'] );
@@ -1578,7 +1599,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
         // Handle the issue where newly initialized widgets are being previewed in the customizer but don't yet have a proper $instance
         if ( ! $instance ) {
         	$defaults = array(
-        		'title' 			=> '',
+                'title' 			=> '',
+                'all_color' 		=> '',
                 'facebook_link' 	=> '',
                 'facebook_color' 	=> '',
                 'twitter_link' 		=> '',
@@ -1614,6 +1636,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         }
 
         $title              = apply_filters( 'widget_title', $instance['title'] );
+        $all_color          = ( isset( $instance['all_color'] ) ) ? $instance['all_color'] : '';
         $facebook_link      = ( isset( $instance['facebook_link'] ) ) ? $instance['facebook_link'] : '';
         $facebook_color     = ( isset( $instance['facebook_color'] ) ) ? $instance['facebook_color'] : '';
         $twitter_link       = ( isset( $instance['twitter_link'] ) ) ? $instance['twitter_link'] : '';
@@ -1645,6 +1668,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         $icon_style         = $instance['icon_style'];
 
         $shortcode 			= '[ssmi '
+                                . 'all_color="' . $all_color . '" '
                                 . 'facebook_link="' . $facebook_link . '" facebook_color="' . $facebook_color . '" '
                                 . 'twitter_link="' . $twitter_link . '" twitter_color="' . $twitter_color . '" '
                                 . 'pinterest_link="' . $pinterest_link . '" pinterest_color="' . $pinterest_color . '" '
