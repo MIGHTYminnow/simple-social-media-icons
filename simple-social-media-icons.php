@@ -727,7 +727,7 @@ class Simple_Social_Media_Icons_Plugin {
                 	   <p>The shortcode works just like the widget and provides you with the same options:</p>
                 	   <p><strong>[ssmi all_color="" facebook_link="" facebook_color="" twitter_link="" twitter_color="" pinterest_link="" pinterest_color="" instagram_link="" instagram_color="" google_plus_link="" google_plus_color="" youtube_link="" youtube_color="" vimeo_link="" vimeo_color="" soundcloud_link="" soundcloud_color="" linkedin_link="" linkedin_color="" flickr_link="" flickr_color="" github_link="" github_color="" codepen_link="" codepen_color="" wordpress_link="" wordpress_color="" medium_link="" medium_color="" icon_style=""]</strong></p>
                 	   <p>Simply fill in the link for each icon to make it appear, like so:</p>
-                	   <p><strong>[ssmi all_color=" facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
+                	   <p><strong>[ssmi all_color="" facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
                 	   <p>The icon_style option accepts the number of any of the icon styles, from 1 to 4.</p>';
 
         return '<div class="ssmi-usage-text">' . __( $usage_text, 'simple-social-media-icons' ) . '</div>';
