@@ -794,38 +794,16 @@ class Simple_Social_Media_Icons extends WP_Widget {
 	 * @return  array  $instance  The updated option values for the widget instance
 	 */
     public function update( $new_instance, $old_instance ) {
+		global $simple_social_media_icons;
+		$social_networks = $simple_social_media_icons->get_social_networks();
 
         $instance                       = $old_instance;
         $instance['title']              = sanitize_text_field( $new_instance['title'] );
-        $instance['all_color']          = sanitize_text_field( $new_instance['all_color'] );
-        $instance['facebook_link']      = sanitize_text_field( $new_instance['facebook_link'] );
-        $instance['facebook_color']     = sanitize_text_field( $new_instance['facebook_color'] );
-        $instance['twitter_link']		= sanitize_text_field( $new_instance['twitter_link'] );
-        $instance['twitter_color']		= sanitize_text_field( $new_instance['twitter_color'] );
-        $instance['pinterest_link']     = sanitize_text_field( $new_instance['pinterest_link'] );
-        $instance['pinterest_color']    = sanitize_text_field( $new_instance['pinterest_color'] );
-        $instance['instagram_link'] 	= sanitize_text_field( $new_instance['instagram_link'] );
-        $instance['instagram_color'] 	= sanitize_text_field( $new_instance['instagram_color'] );
-        $instance['google_plus_link']   = sanitize_text_field( $new_instance['google_plus_link'] );
-        $instance['google_plus_color']  = sanitize_text_field( $new_instance['google_plus_color'] );
-        $instance['youtube_link']       = sanitize_text_field( $new_instance['youtube_link'] );
-        $instance['youtube_color']      = sanitize_text_field( $new_instance['youtube_color'] );
-        $instance['vimeo_link']         = sanitize_text_field( $new_instance['vimeo_link'] );
-        $instance['vimeo_color']        = sanitize_text_field( $new_instance['vimeo_color'] );
-        $instance['soundcloud_link']    = sanitize_text_field( $new_instance['soundcloud_link'] );
-        $instance['soundcloud_color']   = sanitize_text_field( $new_instance['soundcloud_color'] );
-        $instance['linkedin_link']      = sanitize_text_field( $new_instance['linkedin_link'] );
-        $instance['linkedin_color']     = sanitize_text_field( $new_instance['linkedin_color'] );
-        $instance['flickr_link']        = sanitize_text_field( $new_instance['flickr_link'] );
-        $instance['flickr_color']       = sanitize_text_field( $new_instance['flickr_color'] );
-        $instance['github_link']        = sanitize_text_field( $new_instance['github_link'] );
-        $instance['github_color']       = sanitize_text_field( $new_instance['github_color'] );
-        $instance['codepen_link']       = sanitize_text_field( $new_instance['codepen_link'] );
-        $instance['codepen_color']      = sanitize_text_field( $new_instance['codepen_color'] );
-        $instance['wordpress_link']     = sanitize_text_field( $new_instance['wordpress_link'] );
-        $instance['wordpress_color']    = sanitize_text_field( $new_instance['wordpress_color'] );
-        $instance['medium_link']        = sanitize_text_field( $new_instance['medium_link'] );
-        $instance['medium_color']       = sanitize_text_field( $new_instance['medium_color'] );
+		$instance['all_color']          = sanitize_text_field( $new_instance['all_color'] );
+		foreach ( $social_networks as $social_network ) {
+			$instance[ $social_network->id . '_link' ]      = sanitize_text_field( $new_instance[ $social_network->id . '_link' ] );
+			$instance[ $social_network->id . '_color' ]      = sanitize_text_field( $new_instance[ $social_network->id . '_color' ] );
+		}
         $instance['icon_style']         = $new_instance['icon_style'];
 
         return $instance;
