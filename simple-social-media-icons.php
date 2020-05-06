@@ -134,71 +134,85 @@ class Simple_Social_Media_Icons_Plugin {
 		$this->social_networks = [
 			(object) [
 				'id' => 'facebook',
+				'fa_code' => 'facebook',
 				'name' => 'Facebook',
 				'default_background_color' => '#3b5998',
 			],
 			(object) [
 				'id' => 'twitter',
+				'fa_code' => 'twitter',
 				'name' => 'Twitter',
 				'default_background_color' => '#00aced',
 			],
 			(object) [
 				'id' => 'pinterest',
+				'fa_code' => 'pinterest',
 				'name' => 'Pinterest',
 				'default_background_color' => '#cb2027',
 			],
 			(object) [
 				'id' => 'instagram',
+				'fa_code' => 'instagram',
 				'name' => 'Instagram',
 				'default_background_color' => '#517fa4',
 			],
 			(object) [
 				'id' => 'google_plus',
+				'fa_code' => 'google-plus',
 				'name' => 'Google Plus',
 				'default_background_color' => '#dd4b39',
 			],
 			(object) [
 				'id' => 'youtube',
+				'fa_code' => 'youtube',
 				'name' => 'YouTube',
 				'default_background_color' => '#bb0000',
 			],
 			(object) [
 				'id' => 'vimeo',
+				'fa_code' => 'vimeo',
 				'name' => 'Vimeo',
 				'default_background_color' => '#00AFF5',
 			],
 			(object) [
 				'id' => 'soundcloud',
+				'fa_code' => 'soundcloud',
 				'name' => 'SoundCloud',
 				'default_background_color' => '#FF4200',
 			],
 			(object) [
 				'id' => 'linkedin',
+				'fa_code' => 'linkedin',
 				'name' => 'LinkedIn',
 				'default_background_color' => '#007bb6',
 			],
 			(object) [
 				'id' => 'flickr',
+				'fa_code' => 'flickr',
 				'name' => 'Flickr',
 				'default_background_color' => '#ff0084',
 			],
 			(object) [
 				'id' => 'github',
+				'fa_code' => 'github',
 				'name' => 'GitHub',
 				'default_background_color' => '#222',
 			],
 			(object) [
 				'id' => 'codepen',
+				'fa_code' => 'codepen',
 				'name' => 'CodePen',
 				'default_background_color' => '#113472',
 			],
 			(object) [
 				'id' => 'wordpress',
+				'fa_code' => 'wordpress',
 				'name' => 'WordPress',
 				'default_background_color' => '#464646',
 			],
 			(object) [
 				'id' => 'medium',
+				'fa_code' => 'medium',
 				'name' => 'Medium',
 				'default_background_color' => '#000',
 			],
@@ -445,205 +459,34 @@ class Simple_Social_Media_Icons_Plugin {
     /**
      * Generate the icon style demos
      *
-     * @todo    Make this a loop to keep it DRY
-     *
      * @since   1.0.0
      *
      * @return  string  $output  The HTML for the icon style demos
      */
     public function get_icon_styles_demo() {
 
-    	/* This html is formatted a little funky because we're fighting against the inline-block spacing that certain browsers add. See http://css-tricks.com/fighting-the-space-between-inline-block-elements/ */
-
-        $output = '<table class="form-table ssmi-style-demo-table">
-        			<tbody>
-        				<tr>
-        					<th scope="row">' . __( 'Icon Styles', 'simple-social-media-icons' ) . '</th>
-        					<td>' .
-			                '<p><strong>' . __( 'Style 1', 'simple-social-media-icons' ) . '</strong></p>' .
-			                '<p class="ssmi-icon-row icon-style-1">
-			                    <a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-facebook fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-twitter fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-pinterest fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-instagram fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-google-plus fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
-			                    </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-flickr fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-github fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-codepen fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-wordpress fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-medium fa-fw ssmi-icon"></i>
-                                </a>
-			                </p><br>' .
-			                '<p><strong>' . __( 'Style 2', 'simple-social-media-icons' ) . '</strong></p>' .
-			                '<p class="ssmi-icon-row icon-style-2">
-			                    <a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-facebook fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-twitter fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-pinterest fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-instagram fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-google-plus fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
-			                    </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-flickr fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-github fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-codepen fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-wordpress fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-medium fa-fw ssmi-icon"></i>
-                                </a>
-			                </p><br>' .
-			                '<p><strong>' . __( 'Style 3', 'simple-social-media-icons' ) . '</strong></p>' .
-			                '<p class="ssmi-icon-row icon-style-3">
-			                    <a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-facebook fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-twitter fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-pinterest fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-instagram fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-google-plus fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
-			                    </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-flickr fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-github fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-codepen fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-wordpress fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-medium fa-fw ssmi-icon"></i>
-                                </a>
-			                </p><br>' .
-			                '<p><strong>' . __( 'Style 4', 'simple-social-media-icons' ) . '</strong></p>' .
-			                '<p class="ssmi-icon-row icon-style-4">
-			                    <a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-facebook fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-twitter fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-pinterest fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-instagram fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-google-plus fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-youtube fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-vimeo fa-fw ssmi-icon"></i>
-                                </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-soundcloud fa-fw ssmi-icon"></i>
-			                    </a
-			                    ><a href="" onclick="return false" class="ssmi-icon-link">
-			                        <i class="fa fa-linkedin fa-fw ssmi-icon"></i>
-			                    </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-flickr fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-github fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-codepen fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-wordpress fa-fw ssmi-icon"></i>
-                                </a
-                                ><a href="" onclick="return false" class="ssmi-icon-link">
-                                    <i class="fa fa-medium fa-fw ssmi-icon"></i>
-                                </a>
-			                </p>' .
-                			'</td>
-                		</tr>
-                	</tbody>
-                </table>';
+        $output = '<table class="form-table ssmi-style-demo-table">';
+			$output .= '<tbody>';
+				$output .= '<tr>';
+					$output .= '<th scope="row">' . __( 'Icon Styles', 'simple-social-media-icons' ) . '</th>';
+					$output .= '<td>';
+						for ( $i = 1; $i <= 4; $i++ ) {
+							$output .= '<p><strong>' . sprintf( __( 'Style %s', 'simple-social-media-icons' ), $i ) . '</strong></p>';
+							$output .= '<p class="ssmi-icon-row icon-style-' . $i . '">';
+								foreach ( $this->social_networks as $social_network ) {
+									$output .= '<a href="" onclick="return false" class="ssmi-icon-link">';
+										$output .= '<i class="fa fa-' . $social_network->fa_code . ' fa-fw ssmi-icon"></i>';
+									$output .= '</a>';
+								}
+							$output .= '</p>';
+							if ( 4 != $i ) {
+								$output .= '<br>';
+							}
+						}
+					$output .= '</td>';
+				$output .= '</tr>';
+			$output .= '</tbody>';
+		$output .= '</table>';
 
         return $output;
     }
