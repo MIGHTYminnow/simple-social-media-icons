@@ -493,26 +493,26 @@ class Simple_Social_Media_Icons_Plugin {
 
     /**
      * Generate the admin instructions/usage text.
-     *
-	 * @todo	Need to find a way to make this translatable.
 	 *
      * @since   1.0.0
      *
      * @return  string  Usage text
      */
     public function get_usage_text() {
-    	$widgets_url = admin_url( 'widgets.php' );
-    	$customizer_url = admin_url( 'customize.php' );
-    	$usage_text = '<h3>Widget Usage</h3>
-                	   <p>Head to the <a href="' . $widgets_url . '">Widgets Page</a> or the <a href="' . $customizer_url . '">Customizer</a> and add the "Simple Social Media Icons" widget to one of your theme\'s widget areas.</p>
-                	   <p>Paste in the links to the social media profile pages you want to include.</p>
-                	   <p>The widget will show on the front end as a row of icon links in the selected style.</p>
-                	   <h3>Shortcode Usage</h3>
-                	   <p>The shortcode works just like the widget and provides you with the same options:</p>
-                	   <p><strong>[ssmi all_color="" facebook_link="" facebook_color="" twitter_link="" twitter_color="" pinterest_link="" pinterest_color="" instagram_link="" instagram_color="" google_plus_link="" google_plus_color="" youtube_link="" youtube_color="" vimeo_link="" vimeo_color="" soundcloud_link="" soundcloud_color="" linkedin_link="" linkedin_color="" flickr_link="" flickr_color="" github_link="" github_color="" codepen_link="" codepen_color="" wordpress_link="" wordpress_color="" medium_link="" medium_color="" icon_style=""]</strong></p>
-                	   <p>Simply fill in the link for each icon to make it appear, like so:</p>
-                	   <p><strong>[ssmi all_color="" facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>
-                	   <p>The icon_style option accepts the number of any of the icon styles, from 1 to 4.</p>';
+    	$usage_text = '<h3>' . __( 'Widget Usage', 'simple-social-media-icons' ) . '</h3>';
+		$usage_text .= '<p>' . sprintf( __( 'Head to the <a href="%1$s">Widgets Page</a> or the <a href="%2$s">Customizer</a> and add the "Simple Social Media Icons" widget to one of your theme\'s widget areas.', 'simple-social-media-icons' ), admin_url( 'widgets.php' ), admin_url( 'customize.php' ) ) . '</p>';
+		$usage_text .= '<p>' . __( 'Paste in the links to the social media profile pages you want to include.', 'simple-social-media-icons' ) . '</p>';
+		$usage_text .= '<p>' . __( 'The widget will show on the front end as a row of icon links in the selected style.', 'simple-social-media-icons' ) . '</p>';
+		$usage_text .= '<h3>' . __( 'Shortcode Usage', 'simple-social-media-icons' ) . '</h3>';
+		$usage_text .= '<p>' . __( 'The shortcode works just like the widget and provides you with the same options:', 'simple-social-media-icons' ) . '</p>';
+		$usage_text .= '<p><strong>[ssmi all_color="" ';
+			foreach ( $this->social_networks as $social_network ) {
+				$usage_text .= $social_network->fa_code . '_link="" ' . $social_network->fa_code . '_color="" ';
+			}
+		$usage_text .= 'icon_style=""]</strong></p>';
+		$usage_text .= '<p>' . __( 'Simply fill in the link for each icon to make it appear, like so:', 'simple-social-media-icons' ) . '</p>';
+		$usage_text .= '<p><strong>[ssmi facebook_link="https://www.facebook.com/Google" facebook_color="#3b5998" twitter_link="https://twitter.com/google" icon_style="4"]</strong></p>';
+		$usage_text .= '<p>' . __( 'The icon_style option accepts the number of any of the icon styles, from 1 to 4.', 'simple-social-media-icons' ) . '</p>';
 
         return '<div class="ssmi-usage-text">' . __( $usage_text, 'simple-social-media-icons' ) . '</div>';
     }
