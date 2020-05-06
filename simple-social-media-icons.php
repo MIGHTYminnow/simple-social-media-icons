@@ -376,161 +376,20 @@ class Simple_Social_Media_Icons_Plugin {
             	'description'	=> __( 'Select the style of the icons', 'simple-social-media-icons' ),
             	'icon_style'    => array( '1', '2', '3', '4' ),
             )
-        );
-        add_settings_field(
-            'include_facebook_icon',
-            __( 'Include Facebook Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_facebook_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_twitter_icon',
-            __( 'Include Twitter Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_twitter_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_pinterest_icon',
-            __( 'Include Pinterest Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_pinterest_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_instagram_icon',
-            __( 'Include Instagram Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_instagram_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_google_plus_icon',
-            __( 'Include Google Plus Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_google_plus_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_youtube_icon',
-            __( 'Include Youtube Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_youtube_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_vimeo_icon',
-            __( 'Include Vimeo Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_vimeo_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_soundcloud_icon',
-            __( 'Include SoundCloud Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_soundcloud_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_linkedin_icon',
-            __( 'Include LinkedIn Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_linkedin_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_flickr_icon',
-            __( 'Include Flickr Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_flickr_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_github_icon',
-            __( 'Include Github Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_github_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_codenpen_icon',
-            __( 'Include Codepen Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_codepen_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_wordpress_icon',
-            __( 'Include WordPress Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_wordpress_icon',
-                'description' => '',
-            )
-        );
-        add_settings_field(
-            'include_medium_icon',
-            __( 'Include Medium Icon', 'simple-social-media-icons' ),
-            array( $this, 'checkbox_callback' ),
-            self::SLUG,
-            'ssmi_settings_section_primary',
-            array(
-                'id' => 'include_medium_icon',
-                'description' => '',
-            )
-        );
+		);
+		foreach ( $this->social_networks as $social_network ) {
+			add_settings_field(
+				'include_' . $social_network->id . '_icon',
+				sprintf( __( 'Include %s Icon', 'simple-social-media-icons' ), $social_network->name ),
+				array( $this, 'checkbox_callback' ),
+				self::SLUG,
+				'ssmi_settings_section_primary',
+				array(
+					'id' => 'include_' . $social_network->id . '_icon',
+					'description' => '',
+				)
+			);
+		}
     }
 
 	/**
