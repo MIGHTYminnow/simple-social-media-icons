@@ -818,95 +818,38 @@ class Simple_Social_Media_Icons extends WP_Widget {
 	 * @param   array  $instance  All of the options for the widget instance
 	 */
     public function widget( $args, $instance ) {
+		global $simple_social_media_icons;
+		$social_networks = $simple_social_media_icons->get_social_networks();
 
         // Handle the issue where newly initialized widgets are being previewed in the customizer but don't yet have a proper $instance
         if ( ! $instance ) {
         	$defaults = array(
                 'title' 			=> '',
                 'all_color' 		=> '',
-                'facebook_link' 	=> '',
-                'facebook_color' 	=> '',
-                'twitter_link' 		=> '',
-                'twitter_color'		=> '',
-                'pinterest_link' 	=> '',
-                'pinterest_color' 	=> '',
-                'instagram_link' 	=> '',
-                'instagram_color' 	=> '',
-                'google_plus_link' 	=> '',
-                'google_plus_color'	=> '',
-                'youtube_link' 		=> '',
-                'youtube_color'		=> '',
-                'vimeo_link' 		=> '',
-                'vimeo_color' 		=> '',
-                'soundcloud_link' 	=> '',
-                'soundcloud_color' 	=> '',
-                'linkedin_link' 	=> '',
-                'linkedin_color' 	=> '',
-                'flickr_link'       => '',
-                'flickr_color'      => '',
-                'github_link'       => '',
-                'github_color'      => '',
-                'codepen_link'      => '',
-                'codepen_color'     => '',
-                'wordpress_link'    => '',
-                'wordpress_color'   => '',
-                'medium_link'       => '',
-                'medium_color'      => '',
         		'icon_style' 		=> 'default',
         		'is_widget' 		=> 'true'
-        	);
+			);
+			foreach ( $social_networks as $social_network ) {
+				$defaults[ $social_network->id . '_link' ] = '';
+                $defaults[ $social_network->id . '_color' ] = '';
+			}
         	$instance           = wp_parse_args( $instance, $defaults );
         }
 
         $title              = apply_filters( 'widget_title', $instance['title'] );
-        $all_color          = ( isset( $instance['all_color'] ) ) ? $instance['all_color'] : '';
-        $facebook_link      = ( isset( $instance['facebook_link'] ) ) ? $instance['facebook_link'] : '';
-        $facebook_color     = ( isset( $instance['facebook_color'] ) ) ? $instance['facebook_color'] : '';
-        $twitter_link       = ( isset( $instance['twitter_link'] ) ) ? $instance['twitter_link'] : '';
-        $twitter_color      = ( isset( $instance['twitter_color'] ) ) ? $instance['twitter_color'] : '';
-        $pinterest_link     = ( isset( $instance['pinterest_link'] ) ) ? $instance['pinterest_link'] : '';
-        $pinterest_color    = ( isset( $instance['pinterest_color'] ) ) ? $instance['pinterest_color'] : '';
-        $instagram_link 	= ( isset( $instance['instagram_link'] ) ) ? $instance['instagram_link'] : '';
-        $instagram_color 	= ( isset( $instance['instagram_color'] ) ) ? $instance['instagram_color'] : '';
-        $google_plus_link   = ( isset( $instance['google_plus_link'] ) ) ? $instance['google_plus_link'] : '';
-        $google_plus_color  = ( isset( $instance['google_plus_color'] ) ) ? $instance['google_plus_color'] : '';
-        $youtube_link       = ( isset( $instance['youtube_link'] ) ) ? $instance['youtube_link'] : '';
-        $youtube_color      = ( isset( $instance['youtube_color'] ) ) ? $instance['youtube_color'] : '';
-        $vimeo_link         = ( isset( $instance['vimeo_link'] ) ) ? $instance['vimeo_link'] : '';
-        $vimeo_color        = ( isset( $instance['vimeo_color'] ) ) ? $instance['vimeo_color'] : '';
-        $soundcloud_link    = ( isset( $instance['soundcloud_link'] ) ) ? $instance['soundcloud_link'] : '';
-        $soundcloud_color   = ( isset( $instance['soundcloud_color'] ) ) ? $instance['soundcloud_color'] : '';
-        $linkedin_link      = ( isset( $instance['linkedin_link'] ) ) ? $instance['linkedin_link'] : '';
-        $linkedin_color     = ( isset( $instance['linkedin_color'] ) ) ? $instance['linkedin_color'] : '';
-        $flickr_link        = ( isset( $instance['flickr_link'] ) ) ? $instance['flickr_link'] : '';
-        $flickr_color       = ( isset( $instance['flickr_color'] ) ) ? $instance['flickr_color'] : '';
-        $github_link        = ( isset( $instance['github_link'] ) ) ? $instance['github_link'] : '';
-        $github_color       = ( isset( $instance['github_color'] ) ) ? $instance['github_color'] : '';
-        $codepen_link       = ( isset( $instance['codepen_link'] ) ) ? $instance['codepen_link'] : '';
-        $codepen_color      = ( isset( $instance['codepen_color'] ) ) ? $instance['codepen_color'] : '';
-        $wordpress_link     = ( isset( $instance['wordpress_link'] ) ) ? $instance['wordpress_link'] : '';
-        $wordpress_color    = ( isset( $instance['wordpress_color'] ) ) ? $instance['wordpress_color'] : '';
-        $medium_link        = ( isset( $instance['medium_link'] ) ) ? $instance['medium_link'] : '';
-        $medium_color       = ( isset( $instance['medium_color'] ) ) ? $instance['medium_color'] : '';
+		$all_color          = ( isset( $instance['all_color'] ) ) ? $instance['all_color'] : '';
         $icon_style         = $instance['icon_style'];
 
-        $shortcode 			= '[ssmi '
-                                . 'all_color="' . $all_color . '" '
-                                . 'facebook_link="' . $facebook_link . '" facebook_color="' . $facebook_color . '" '
-                                . 'twitter_link="' . $twitter_link . '" twitter_color="' . $twitter_color . '" '
-                                . 'pinterest_link="' . $pinterest_link . '" pinterest_color="' . $pinterest_color . '" '
-                                . 'instagram_link="' . $instagram_link . '" instagram_color="' . $instagram_color . '" '
-                                . 'google_plus_link="' . $google_plus_link . '" google_plus_color="' . $google_plus_color . '" '
-                                . 'youtube_link="' . $youtube_link . '" youtube_color="' . $youtube_color . '" '
-                                . 'vimeo_link="' . $vimeo_link . '" vimeo_color="' . $vimeo_color . '" '
-                                . 'soundcloud_link="' . $soundcloud_link . '" soundcloud_color="' . $soundcloud_color . '" '
-                                . 'linkedin_link="' . $linkedin_link . '" linkedin_color="' . $linkedin_color . '" '
-                                . 'flickr_link="' . $flickr_link . '" flickr_color="' . $flickr_color . '" '
-                                . 'github_link="' . $github_link . '" flickr_color="' . $flickr_color . '" '
-                                . 'codepen_link="' . $codepen_link . '" codepen_color="' . $codepen_color . '" '
-                                . 'wordpress_link="' . $wordpress_link . '" wordpress_color="' . $wordpress_color . '" '
-                                . 'medium_link="' . $medium_link . '" medium_color="' . $medium_color . '" '
-                                . 'icon_style="' . $icon_style . '" is_widget="true"]';
+		$shortcode = '[ssmi all_color="' . $all_color . '" ';
+		foreach ( $social_networks as $social_network ) {
+			if ( isset( $instance[ $social_network->id . '_link' ] ) ) {
+				$shortcode .= $social_network->id . '_link="' . $instance[ $social_network->id . '_link' ] . '" ';
+			}
+			if ( isset( $instance[ $social_network->id . '_color' ] ) ) {
+				$shortcode .= $social_network->id . '_color="' . $instance[ $social_network->id . '_color' ] . '" ';
+			}
+		}
+		$shortcode .= 'icon_style="' . $icon_style . '" is_widget="true"]';
 
         echo $args['before_widget'];
 
