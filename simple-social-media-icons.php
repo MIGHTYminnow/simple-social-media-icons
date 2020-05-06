@@ -511,7 +511,7 @@ class Simple_Social_Media_Icons_Plugin {
 		$usage_text .= '<p>' . __( 'The shortcode works just like the widget and provides you with the same options:', 'simple-social-media-icons' ) . '</p>';
 		$usage_text .= '<p><strong>[ssmi all_color="" ';
 			foreach ( $this->social_networks as $social_network ) {
-				$usage_text .= $social_network->fa_code . '_link="" ' . $social_network->fa_code . '_color="" ';
+				$usage_text .= $social_network->id . '_link="" ' . $social_network->id . '_color="" ';
 			}
 		$usage_text .= 'icon_style=""]</strong></p>';
 		$usage_text .= '<p>' . __( 'Simply fill in the link for each icon to make it appear, like so:', 'simple-social-media-icons' ) . '</p>';
@@ -735,8 +735,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
 							);
 		
 		foreach ( $social_networks as $social_network ) {
-			$defaults[ $social_network->fa_code . '_link' ] = '';
-			$defaults[ $social_network->fa_code . '_color' ] = '';
+			$defaults[ $social_network->id . '_link' ] = '';
+			$defaults[ $social_network->id . '_color' ] = '';
 		}
 
         $instance           = wp_parse_args( $instance, $defaults );
@@ -755,15 +755,15 @@ class Simple_Social_Media_Icons extends WP_Widget {
         </p>
 		<?php
 		foreach ( $social_networks as $social_network ) {
-			if ( isset( $this->plugin_options[ 'include_' . $social_network->fa_code . '_icon' ] ) ) {
+			if ( isset( $this->plugin_options[ 'include_' . $social_network->id . '_icon' ] ) ) {
 				?>
 				<p>
-					<label for="simple_social_media_icons_<?php echo $social_network->fa_code; ?>_link"><?php echo sprintf( __( '%s Link', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
-					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->fa_code; ?>_link" name="<?php echo $this->get_field_name( $social_network->fa_code . '_link' ); ?>" value="<?php echo esc_url( $instance[ $social_network->fa_code . '_link' ] ); ?>" />
+					<label for="simple_social_media_icons_<?php echo $social_network->id; ?>_link"><?php echo sprintf( __( '%s Link', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
+					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->id; ?>_link" name="<?php echo $this->get_field_name( $social_network->id . '_link' ); ?>" value="<?php echo esc_url( $instance[ $social_network->id . '_link' ] ); ?>" />
 				</p>
 				<p>
-					<label for="simple_social_media_icons_<?php echo $social_network->fa_code; ?>_color"><?php echo sprintf( __( '%s Color', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
-					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->fa_code; ?>_color" name="<?php echo $this->get_field_name( $social_network->fa_code . '_color' ); ?>" value="<?php echo esc_attr( $instance[ $social_network->fa_code . '_color' ] ); ?>" />
+					<label for="simple_social_media_icons_<?php echo $social_network->id; ?>_color"><?php echo sprintf( __( '%s Color', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
+					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->id; ?>_color" name="<?php echo $this->get_field_name( $social_network->id . '_color' ); ?>" value="<?php echo esc_attr( $instance[ $social_network->id . '_color' ] ); ?>" />
 					<i><?php echo sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->default_background_color ); ?></i>
 				</p>
 				<?php
