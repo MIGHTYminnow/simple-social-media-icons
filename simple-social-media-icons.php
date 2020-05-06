@@ -92,6 +92,15 @@ class Simple_Social_Media_Icons_Plugin {
     );
 
     /**
+     * List of Social Networks.
+     *
+     * @since  1.3.0
+     *
+     * @var    array
+     */
+    protected $social_networks;
+
+    /**
      * Instance of this class.
      *
      * @since  1.0.0
@@ -121,6 +130,79 @@ class Simple_Social_Media_Icons_Plugin {
      * @since  1.0.0
      */
     private function __construct() {
+		// List of Social Networks
+		$this->social_networks = [
+			(object) [
+				'id' => 'facebook',
+				'name' => 'Facebook',
+				'default_background_color' => '#3b5998',
+			],
+			(object) [
+				'id' => 'twitter',
+				'name' => 'Twitter',
+				'default_background_color' => '#00aced',
+			],
+			(object) [
+				'id' => 'pinterest',
+				'name' => 'Pinterest',
+				'default_background_color' => '#cb2027',
+			],
+			(object) [
+				'id' => 'instagram',
+				'name' => 'Instagram',
+				'default_background_color' => '#517fa4',
+			],
+			(object) [
+				'id' => 'google_plus',
+				'name' => 'Google Plus',
+				'default_background_color' => '#dd4b39',
+			],
+			(object) [
+				'id' => 'youtube',
+				'name' => 'YouTube',
+				'default_background_color' => '#bb0000',
+			],
+			(object) [
+				'id' => 'vimeo',
+				'name' => 'Vimeo',
+				'default_background_color' => '#00AFF5',
+			],
+			(object) [
+				'id' => 'soundcloud',
+				'name' => 'SoundCloud',
+				'default_background_color' => '#FF4200',
+			],
+			(object) [
+				'id' => 'linkedin',
+				'name' => 'LinkedIn',
+				'default_background_color' => '#007bb6',
+			],
+			(object) [
+				'id' => 'flickr',
+				'name' => 'Flickr',
+				'default_background_color' => '#ff0084',
+			],
+			(object) [
+				'id' => 'github',
+				'name' => 'GitHub',
+				'default_background_color' => '#222',
+			],
+			(object) [
+				'id' => 'codepen',
+				'name' => 'CodePen',
+				'default_background_color' => '#113472',
+			],
+			(object) [
+				'id' => 'wordpress',
+				'name' => 'WordPress',
+				'default_background_color' => '#464646',
+			],
+			(object) [
+				'id' => 'medium',
+				'name' => 'Medium',
+				'default_background_color' => '#000',
+			],
+		];
 
         // Perform plugin initialization actions.
         $this->initialize();
