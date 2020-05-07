@@ -140,85 +140,85 @@ class Simple_Social_Media_Icons_Plugin {
 				'id' => 'facebook',
 				'fa_code' => 'facebook',
 				'name' => 'Facebook',
-				'default_background_color' => '#3b5998',
+				'brand_color' => '#3b5998',
 			],
 			(object) [
 				'id' => 'twitter',
 				'fa_code' => 'twitter',
 				'name' => 'Twitter',
-				'default_background_color' => '#00aced',
+				'brand_color' => '#00aced',
 			],
 			(object) [
 				'id' => 'pinterest',
 				'fa_code' => 'pinterest',
 				'name' => 'Pinterest',
-				'default_background_color' => '#cb2027',
+				'brand_color' => '#cb2027',
 			],
 			(object) [
 				'id' => 'instagram',
 				'fa_code' => 'instagram',
 				'name' => 'Instagram',
-				'default_background_color' => '#517fa4',
+				'brand_color' => '#517fa4',
 			],
 			(object) [
 				'id' => 'google_plus',
 				'fa_code' => 'google-plus',
 				'name' => 'Google Plus',
-				'default_background_color' => '#dd4b39',
+				'brand_color' => '#dd4b39',
 			],
 			(object) [
 				'id' => 'youtube',
 				'fa_code' => 'youtube',
 				'name' => 'YouTube',
-				'default_background_color' => '#bb0000',
+				'brand_color' => '#bb0000',
 			],
 			(object) [
 				'id' => 'vimeo',
 				'fa_code' => 'vimeo',
 				'name' => 'Vimeo',
-				'default_background_color' => '#00AFF5',
+				'brand_color' => '#00AFF5',
 			],
 			(object) [
 				'id' => 'soundcloud',
 				'fa_code' => 'soundcloud',
 				'name' => 'SoundCloud',
-				'default_background_color' => '#FF4200',
+				'brand_color' => '#FF4200',
 			],
 			(object) [
 				'id' => 'linkedin',
 				'fa_code' => 'linkedin',
 				'name' => 'LinkedIn',
-				'default_background_color' => '#007bb6',
+				'brand_color' => '#007bb6',
 			],
 			(object) [
 				'id' => 'flickr',
 				'fa_code' => 'flickr',
 				'name' => 'Flickr',
-				'default_background_color' => '#ff0084',
+				'brand_color' => '#ff0084',
 			],
 			(object) [
 				'id' => 'github',
 				'fa_code' => 'github',
 				'name' => 'GitHub',
-				'default_background_color' => '#222',
+				'brand_color' => '#222',
 			],
 			(object) [
 				'id' => 'codepen',
 				'fa_code' => 'codepen',
 				'name' => 'CodePen',
-				'default_background_color' => '#113472',
+				'brand_color' => '#113472',
 			],
 			(object) [
 				'id' => 'wordpress',
 				'fa_code' => 'wordpress',
 				'name' => 'WordPress',
-				'default_background_color' => '#464646',
+				'brand_color' => '#464646',
 			],
 			(object) [
 				'id' => 'medium',
 				'fa_code' => 'medium',
 				'name' => 'Medium',
-				'default_background_color' => '#000',
+				'brand_color' => '#000',
 			],
 		];
 
@@ -649,7 +649,7 @@ class Simple_Social_Media_Icons_Plugin {
 					'heading' => sprintf( __( '%s Background Color', 'simple-social-media-icons' ), $social_network->name ),
 					'param_name' => $social_network->id . '_color',
 					'value' => '',
-					'description' => sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->default_background_color ),
+					'description' => sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->brand_color ),
 				) );
 			}
 		}
@@ -765,7 +765,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 				<p>
 					<label for="simple_social_media_icons_<?php echo $social_network->id; ?>_color"><?php echo sprintf( __( '%s Background Color', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
 					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->id; ?>_color" name="<?php echo $this->get_field_name( $social_network->id . '_color' ); ?>" value="<?php echo esc_attr( $instance[ $social_network->id . '_color' ] ); ?>" />
-					<i><?php echo sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->default_background_color ); ?></i>
+					<i><?php echo sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->brand_color ); ?></i>
 				</p>
 				<?php
 			}
