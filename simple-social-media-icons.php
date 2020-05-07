@@ -625,7 +625,7 @@ class Simple_Social_Media_Icons_Plugin {
         array_push( $vc_params, array(
             'type' => 'textfield',
             'class' => '',
-            'heading' => __( 'All Icons Color', 'simple-social-media-icons' ),
+            'heading' => __( 'Background Color for All Icons', 'simple-social-media-icons' ),
             'param_name' => 'default_background_color',
             'value' => '',
             'description' => __( 'Use this field to make all icons of the same color.', 'simple-social-media-icons' )
@@ -750,7 +750,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <input type="text" class="widefat" id="simple_social_media_icons_title" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="simple_social_media_icons_default_background_color"><?php _e( 'Color for all icons', 'simple-social-media-icons' ); ?>:</label>
+            <label for="simple_social_media_icons_default_background_color"><?php _e( 'Background Color for All Icons', 'simple-social-media-icons' ); ?>:</label>
             <input type="text" class="widefat" id="simple_social_media_icons_default_background_color" name="<?php echo $this->get_field_name( 'default_background_color' ); ?>" value="<?php echo esc_attr( $default_background_color ); ?>" />
         </p>
 		<?php
