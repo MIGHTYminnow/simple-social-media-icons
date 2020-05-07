@@ -625,10 +625,10 @@ class Simple_Social_Media_Icons_Plugin {
         array_push( $vc_params, array(
             'type' => 'textfield',
             'class' => '',
-            'heading' => __( 'Background Color for All Icons', 'simple-social-media-icons' ),
+            'heading' => __( 'Background Color for All Social Networks', 'simple-social-media-icons' ),
             'param_name' => 'default_background_color',
             'value' => '',
-            'description' => __( 'Use this field to make all icons of the same color.', 'simple-social-media-icons' )
+            'description' => __( 'Use this field to make all icons of the same background color.', 'simple-social-media-icons' )
             )
         );
 
@@ -646,7 +646,7 @@ class Simple_Social_Media_Icons_Plugin {
 				array_push( $vc_params, array(
 					'type' => 'textfield',
 					'class' => '',
-					'heading' => sprintf( __( '%s Color', 'simple-social-media-icons' ), $social_network->name ),
+					'heading' => sprintf( __( '%s Background Color', 'simple-social-media-icons' ), $social_network->name ),
 					'param_name' => $social_network->id . '_color',
 					'value' => '',
 					'description' => sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->default_background_color ),
@@ -750,8 +750,9 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <input type="text" class="widefat" id="simple_social_media_icons_title" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="simple_social_media_icons_default_background_color"><?php _e( 'Background Color for All Icons', 'simple-social-media-icons' ); ?>:</label>
-            <input type="text" class="widefat" id="simple_social_media_icons_default_background_color" name="<?php echo $this->get_field_name( 'default_background_color' ); ?>" value="<?php echo esc_attr( $default_background_color ); ?>" />
+            <label for="simple_social_media_icons_default_background_color"><?php _e( 'Background Color for All Social Networks', 'simple-social-media-icons' ); ?>:</label>
+			<input type="text" class="widefat" id="simple_social_media_icons_default_background_color" name="<?php echo $this->get_field_name( 'default_background_color' ); ?>" value="<?php echo esc_attr( $default_background_color ); ?>" />
+			<i><?php _e( 'Use this field to make all icons of the same background color.', 'simple-social-media-icons' ); ?></i>
         </p>
 		<?php
 		foreach ( $social_networks as $social_network ) {
@@ -762,7 +763,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->id; ?>_link" name="<?php echo $this->get_field_name( $social_network->id . '_link' ); ?>" value="<?php echo esc_url( $instance[ $social_network->id . '_link' ] ); ?>" />
 				</p>
 				<p>
-					<label for="simple_social_media_icons_<?php echo $social_network->id; ?>_color"><?php echo sprintf( __( '%s Color', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
+					<label for="simple_social_media_icons_<?php echo $social_network->id; ?>_color"><?php echo sprintf( __( '%s Background Color', 'simple-social-media-icons' ), $social_network->name ); ?>:</label>
 					<input type="text" class="widefat" id="simple_social_media_icons_<?php echo $social_network->id; ?>_color" name="<?php echo $this->get_field_name( $social_network->id . '_color' ); ?>" value="<?php echo esc_attr( $instance[ $social_network->id . '_color' ] ); ?>" />
 					<i><?php echo sprintf( __( 'Default is %s', 'simple-social-media-icons' ), $social_network->default_background_color ); ?></i>
 				</p>
