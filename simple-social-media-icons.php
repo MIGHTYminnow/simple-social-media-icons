@@ -557,14 +557,16 @@ class Simple_Social_Media_Icons_Plugin {
 		$return = '';
 
 		$background_color = false;
-		if ( $default_background_color ) {
-			$background_color = $default_background_color;
-		}
-		if ( $this_background_color ) {
-			$background_color = $this_background_color;
-		}
-		if ( $background_color ) {
-			$return .= ' background: ' . $background_color . '; ';
+		if ( 1 != $style ) {
+			if ( $default_background_color ) {
+				$background_color = $default_background_color;
+			}
+			if ( $this_background_color ) {
+				$background_color = $this_background_color;
+			}
+			if ( $background_color ) {
+				$return .= ' background: ' . $background_color . '; ';
+			}
 		}
 
 		$icon_color = false;
