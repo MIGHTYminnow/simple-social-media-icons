@@ -509,7 +509,7 @@ class Simple_Social_Media_Icons_Plugin {
 		$usage_text .= '<p>' . __( 'The widget will show on the front end as a row of icon links in the selected style.', 'simple-social-media-icons' ) . '</p>';
 		$usage_text .= '<h3>' . __( 'Shortcode Usage', 'simple-social-media-icons' ) . '</h3>';
 		$usage_text .= '<p>' . __( 'The shortcode works just like the widget and provides you with the same options:', 'simple-social-media-icons' ) . '</p>';
-		$usage_text .= '<p><strong>[ssmi all_color="" ';
+		$usage_text .= '<p><strong>[ssmi default_background_color="" ';
 			foreach ( $this->social_networks as $social_network ) {
 				$usage_text .= $social_network->id . '_link="" ' . $social_network->id . '_color="" ';
 			}
@@ -543,16 +543,16 @@ class Simple_Social_Media_Icons_Plugin {
      * @since   1.2.0
      *
      * @param   string  $style  The icon style.
-     * @param  string  $all_color  The custom color for all the icons.
+     * @param  string  $default_background_color  The custom color for all the icons.
      * @param  string  $this_color  The custom color for this icon.
      * @return  string  $style  The style attributo for <i>.
      */
-    public function icon_custom_color( $style, $all_color, $this_color ) {
-        if ( ! $all_color && ! $this_color ) {
+    public function icon_custom_color( $style, $default_background_color, $this_color ) {
+        if ( ! $default_background_color && ! $this_color ) {
             return '';
         }
 
-        $color = ( $this_color ) ? $this_color : $all_color;
+        $color = ( $this_color ) ? $this_color : $default_background_color;
 
         return ( 1 == $style )
             ? ' style="color:' . $color . '" '
@@ -571,7 +571,7 @@ class Simple_Social_Media_Icons_Plugin {
      */
     public function ssmi_shortcode( $atts ) {
 		$defaults = array(
-            'all_color'     => '',
+            'default_background_color'     => '',
             'icon_style'        => 'default',
             'is_widget'         => 'false',
 		);
@@ -602,7 +602,7 @@ class Simple_Social_Media_Icons_Plugin {
 		foreach ( $this->social_networks as $social_network ) {
 			if ( ! $a[ $social_network->id . '_link' ] == '' && isset( $this->options[ 'include_' . $social_network->id . '_icon' ] ) ) {
 				$output .= '<a href="' . esc_url( $a[ $social_network->id . '_link' ] ) . '" class="ssmi-icon-link" target="_blank">' .
-					'<i ' . $this->icon_custom_color( $icon_style, $a['all_color'], $a[ $social_network->id . '_color' ] ) . ' class="fa fa-' . $social_network->fa_code . ' fa-fw ssmi-icon"></i>' .
+					'<i ' . $this->icon_custom_color( $icon_style, $a['default_background_color'], $a[ $social_network->id . '_color' ] ) . ' class="fa fa-' . $social_network->fa_code . ' fa-fw ssmi-icon"></i>' .
 					'<span class="screen-reader-text">' . $social_network->name . '</span>' .
 				'</a>';
 			}
@@ -626,7 +626,7 @@ class Simple_Social_Media_Icons_Plugin {
             'type' => 'textfield',
             'class' => '',
             'heading' => __( 'All Icons Color', 'simple-social-media-icons' ),
-            'param_name' => 'all_color',
+            'param_name' => 'default_background_color',
             'value' => '',
             'description' => __( 'Use this field to make all icons of the same color.', 'simple-social-media-icons' )
             )
@@ -730,7 +730,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 
         $defaults           = array(
                                 'title' 			=> '',
-                                'all_color'			=> '',
+                                'default_background_color'			=> '',
         						'icon_style' 		=> 'default'
 							);
 		
@@ -741,7 +741,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 
         $instance           = wp_parse_args( $instance, $defaults );
         $title              = $instance['title'];
-        $all_color          = $instance['all_color'];
+        $default_background_color          = $instance['default_background_color'];
         $icon_style         = $instance['icon_style'];
 
         ?>
@@ -750,8 +750,8 @@ class Simple_Social_Media_Icons extends WP_Widget {
             <input type="text" class="widefat" id="simple_social_media_icons_title" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $title ); ?>" />
         </p>
         <p>
-            <label for="simple_social_media_icons_all_color"><?php _e( 'Color for all icons', 'simple-social-media-icons' ); ?>:</label>
-            <input type="text" class="widefat" id="simple_social_media_icons_all_color" name="<?php echo $this->get_field_name( 'all_color' ); ?>" value="<?php echo esc_attr( $all_color ); ?>" />
+            <label for="simple_social_media_icons_default_background_color"><?php _e( 'Color for all icons', 'simple-social-media-icons' ); ?>:</label>
+            <input type="text" class="widefat" id="simple_social_media_icons_default_background_color" name="<?php echo $this->get_field_name( 'default_background_color' ); ?>" value="<?php echo esc_attr( $default_background_color ); ?>" />
         </p>
 		<?php
 		foreach ( $social_networks as $social_network ) {
@@ -799,7 +799,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
 
         $instance                       = $old_instance;
         $instance['title']              = sanitize_text_field( $new_instance['title'] );
-		$instance['all_color']          = sanitize_text_field( $new_instance['all_color'] );
+		$instance['default_background_color']          = sanitize_text_field( $new_instance['default_background_color'] );
 		foreach ( $social_networks as $social_network ) {
 			$instance[ $social_network->id . '_link' ]      = sanitize_text_field( $new_instance[ $social_network->id . '_link' ] );
 			$instance[ $social_network->id . '_color' ]      = sanitize_text_field( $new_instance[ $social_network->id . '_color' ] );
@@ -825,7 +825,7 @@ class Simple_Social_Media_Icons extends WP_Widget {
         if ( ! $instance ) {
         	$defaults = array(
                 'title' 			=> '',
-                'all_color' 		=> '',
+                'default_background_color' 		=> '',
         		'icon_style' 		=> 'default',
         		'is_widget' 		=> 'true'
 			);
@@ -837,10 +837,10 @@ class Simple_Social_Media_Icons extends WP_Widget {
         }
 
         $title              = apply_filters( 'widget_title', $instance['title'] );
-		$all_color          = ( isset( $instance['all_color'] ) ) ? $instance['all_color'] : '';
+		$default_background_color          = ( isset( $instance['default_background_color'] ) ) ? $instance['default_background_color'] : '';
         $icon_style         = $instance['icon_style'];
 
-		$shortcode = '[ssmi all_color="' . $all_color . '" ';
+		$shortcode = '[ssmi default_background_color="' . $default_background_color . '" ';
 		foreach ( $social_networks as $social_network ) {
 			if ( isset( $instance[ $social_network->id . '_link' ] ) ) {
 				$shortcode .= $social_network->id . '_link="' . $instance[ $social_network->id . '_link' ] . '" ';
