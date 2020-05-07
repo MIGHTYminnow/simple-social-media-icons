@@ -547,16 +547,14 @@ class Simple_Social_Media_Icons_Plugin {
      * @param  string  $this_color  The custom color for this icon.
      * @return  string  $style  The style attributo for <i>.
      */
-    public function icon_custom_color( $style, $default_background_color, $this_color ) {
+    public function custom_background_color( $style, $default_background_color, $this_color ) {
         if ( ! $default_background_color && ! $this_color ) {
             return '';
         }
 
         $color = ( $this_color ) ? $this_color : $default_background_color;
 
-        return ( 1 == $style )
-            ? ' style="color:' . $color . '" '
-            : ' style="background:' . $color . '" ';
+        return ' style="background:' . $color . '" ';
     }
 
     /**
@@ -602,7 +600,7 @@ class Simple_Social_Media_Icons_Plugin {
 		foreach ( $this->social_networks as $social_network ) {
 			if ( ! $a[ $social_network->id . '_link' ] == '' && isset( $this->options[ 'include_' . $social_network->id . '_icon' ] ) ) {
 				$output .= '<a href="' . esc_url( $a[ $social_network->id . '_link' ] ) . '" class="ssmi-icon-link" target="_blank">' .
-					'<i ' . $this->icon_custom_color( $icon_style, $a['default_background_color'], $a[ $social_network->id . '_background_color' ] ) . ' class="fa fa-' . $social_network->fa_code . ' fa-fw ssmi-icon"></i>' .
+					'<i ' . $this->custom_background_color( $icon_style, $a['default_background_color'], $a[ $social_network->id . '_background_color' ] ) . ' class="fa fa-' . $social_network->fa_code . ' fa-fw ssmi-icon"></i>' .
 					'<span class="screen-reader-text">' . $social_network->name . '</span>' .
 				'</a>';
 			}
