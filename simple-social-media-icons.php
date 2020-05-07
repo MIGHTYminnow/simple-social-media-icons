@@ -548,9 +548,9 @@ class Simple_Social_Media_Icons_Plugin {
      * @return  string  $style  The style attributo for <i>.
      */
     public function custom_background_color( $style, $default_background_color, $this_color ) {
-        if ( ! $default_background_color && ! $this_color ) {
+        if ( ( ! $default_background_color && ! $this_color ) || ( 1 == $style ) ) {
             return '';
-        }
+		}
 
         $color = ( $this_color ) ? $this_color : $default_background_color;
 
