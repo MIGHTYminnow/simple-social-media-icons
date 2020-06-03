@@ -20,6 +20,7 @@
  * CodePen:		#113472;
  * WordPress: 	#464646;
  * Medium: 		#000;
+ * Snapchat: 	#FEFE00;
  */
 
 /* Generic Styles */
@@ -130,6 +131,11 @@ a.ssmi-icon-link:hover i.fa {
 	color: #000;
 }
 
+.icon-style-1 i.fa-snapchat-ghost {
+	color: #FEFE00;
+	text-shadow: 0 0 0 #000;
+}
+
 .icon-style-2 i.fa-facebook,
 .icon-style-3 i.fa-facebook,
 .icon-style-4 i.fa-facebook {
@@ -226,6 +232,14 @@ a.ssmi-icon-link:hover i.fa {
 .icon-style-4 i.fa-medium {
 	color: white;
 	background-color: #000;
+}
+
+.icon-style-2 i.fa-snapchat-ghost,
+.icon-style-3 i.fa-snapchat-ghost,
+.icon-style-4 i.fa-snapchat-ghost {
+	color: white;
+	background-color: #FEFE00;
+	text-shadow: 0 0 0 #000;
 }
 
 /* Admin Styles */

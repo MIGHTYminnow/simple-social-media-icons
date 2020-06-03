@@ -88,7 +88,8 @@ class Simple_Social_Media_Icons_Plugin {
         'include_github_icon'       => false,
         'include_codepen_icon'      => false,
         'include_wordpress_icon'    => false,
-        'include_medium_icon'       => false,
+		'include_medium_icon'       => false,
+		'include_snapchat_icon'     => false,
     );
 
     /**
@@ -219,6 +220,12 @@ class Simple_Social_Media_Icons_Plugin {
 				'fa_code' => 'medium',
 				'name' => 'Medium',
 				'brand_color' => '#000',
+			],
+			(object) [
+				'id' => 'snapchat',
+				'fa_code' => 'snapchat-ghost',
+				'name' => 'Snapchat',
+				'brand_color' => '#FEFE00',
 			],
 		];
 
