@@ -260,7 +260,7 @@ class Simple_Social_Media_Icons_Plugin {
 	 */
     public function register_scripts() {
 
-		wp_register_style( 'ssmi-fontawesome-css', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' );
+		wp_register_style( 'ssmi-fontawesome-css', 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 		wp_register_style( 'ssmi-css', plugin_dir_url( __FILE__ ) . '/css/simple-social-media-icons.css' );
     }
 
